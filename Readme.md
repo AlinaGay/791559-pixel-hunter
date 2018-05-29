@@ -1,6 +1,7 @@
 # Личный проект «Пиксель хантер» [![Build status][travis-image]][travis-url]
 
 * Студент: [Алина](https://up.htmlacademy.ru/ecmascript/5/user/791559).
+* Наставник: https://htmlacademy.ru/profile/id44700.
 * Наставник: `Сергей Ключковский`.
 
 ---
