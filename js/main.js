@@ -48,16 +48,16 @@ const styleElement = document.createElement("style");
 styleElement.innerHTML = ".arrows__wrap {position: absolute;top: 95px;left: 50%;margin-left: -56px;}" +
   ".arrows__btn {background: none;border: 2px solid black;padding: 5px 20px;}";
 
-const createButton = (innerValue) => {
+const createButton = (innerValue, value) => {
   const buttonElement = document.createElement("button");
   buttonElement.setAttribute("class", "arrows__btn");
-  buttonElement.setAttribute("onclick", "nextScreen()");
+  buttonElement.setAttribute("onclick", value);
   buttonElement.innerHTML = innerValue;
 
   return buttonElement;
 }
 
 divElement.appendChild(styleElement);
-divElement.appendChild(createButton("<-"));
-divElement.appendChild(createButton("->"));
+divElement.appendChild(createButton("<-","previusScreen()"));
+divElement.appendChild(createButton("->","nextScreen()"));
 document.body.appendChild(divElement);
