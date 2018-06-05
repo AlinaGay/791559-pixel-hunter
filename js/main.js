@@ -51,7 +51,7 @@ document.addEventListener(`keydown`, (evt) => {
 
 select(0);
 
-const divElement = document.createElement("div");
+const divElement = document.createElement(`div`);
 divElement.classList.add(`arrows__wrap`);
 divElement.innerHTML = mouseClickArrows;
 
@@ -60,6 +60,6 @@ document.body.appendChild(divElement);
 const arrowClickLeft = divElement.children[1];
 const arrowClickRight = divElement.children[2];
 
-arrowClickLeft.addEventListener("click", () => select(current - 1), false);
-arrowClickRight.addEventListener("click", () => select(current + 1), false);
+arrowClickLeft.addEventListener(`click`, () => select(current - 1), false);
+arrowClickRight.addEventListener(`click`, () => select(current + 1), false);
 
