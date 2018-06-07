@@ -1,10 +1,17 @@
 // Util.js
 
-export const getElementFromTemplate = (template) => {
-  const container = document.createElement(`div`);
-  container.innerHTML = template;
+ const getElementFromTemplate = (template) => {
+   const container = document.createElement(`div`);
+   container.innerHTML = template;
 
-return container;
+ return container;
+ };
+
+const changeScreen = (element) => {
+  const mainElement = document.querySelector(`main.central`);
+  mainElement.innerHTML = ``;
+  mainElement.appendChild(element);
 };
 
-const mainElement = document.querySelector(`main.central`);
+export {getElementFromTemplate};
+export {changeScreen};

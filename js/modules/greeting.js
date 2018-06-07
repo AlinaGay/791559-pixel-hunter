@@ -1,6 +1,8 @@
 // Greeting.js
+import {changeScreen, getElementFromTemplate} from '../util.js';
+import {rulesElement} from './rules.js';
 
-const greetingTemplate = () =>
+const greetingTemplate =
   `<div class="greeting central--blur">
     <div class="greeting__logo"><img src="img/logo_big.png" width="201" height="89" alt="Pixel Hunter"></div>
     <h1 class="greeting__asterisk">*</h1>
@@ -23,7 +25,14 @@ const greetingTemplate = () =>
       <a href="https://www.facebook.com/htmlacademy" class="social-link  social-link--fb">Фэйсбук</a>
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
- </footer>`
+ </footer>`;
 
-const greetingElement = getElementFromTemplate(greetingTemplate());
-export default greetingElement;
+const greetingElement = getElementFromTemplate(greetingTemplate);
+
+const greetingContinue = greetingElement.querySelector(`.greeting__continue`);
+
+greetingContinue.addEventListener(`click`, () => {
+  changeScreen(rulesElement);
+});
+
+export {greetingElement};

@@ -1,6 +1,8 @@
 // Rules.js
+import {changeScreen, getElementFromTemplate} from '../util.js';
+import {gameFirstElement} from './game-1.js';
 
-const rulesTemplate = () =>
+const rulesTemplate =
   `<header class="header">
     <div class="header__back">
       <button class="back">
@@ -34,7 +36,14 @@ const rulesTemplate = () =>
       <a href="https://www.facebook.com/htmlacademy" class="social-link  social-link--fb">Фэйсбук</a>
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
-  </footer>`
+  </footer>`;
 
-const rulesElement = getElementFromTemplate(rulesTemplate());
-export default rulesElement;
+const rulesElement = getElementFromTemplate(rulesTemplate);
+
+const rulesButton = rulesElement.querySelector(`.rules__button`);
+
+rulesButton.addEventListener(`click`, () => {
+  changeScreen(gameFirstElement);
+});
+
+export {rulesElement};

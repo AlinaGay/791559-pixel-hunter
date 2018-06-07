@@ -1,8 +1,10 @@
 // Intro.js
+import {changeScreen, getElementFromTemplate} from '../util.js';
+import {greetingElement} from './greeting.js';
 
-const introTemplate = () =>
-`<div id="main" class="central__content">
-    <div id="intro" class="intro">
+const introTemplate =
+  `<div id="main" class="central__content">
+      <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>
       <p class="intro__motto"><sup>*</sup> Это не фото. Это рисунок маслом нидерландского художника-фотореалиста Tjalf Sparnaay.</p>
     </div>
@@ -16,7 +18,14 @@ const introTemplate = () =>
       <a href="https://www.facebook.com/htmlacademy" class="social-link  social-link--fb">Фэйсбук</a>
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
-</footer>`
+  </footer>`;
 
-const introElement = getElementFromTemplate(introTemplate());
-export default introElement;
+const introElement = getElementFromTemplate(introTemplate);
+
+const introAsterisk = introElement.querySelector(`.intro__asterisk`);
+
+introAsterisk.addEventListener(`click`, () => {
+changeScreen(greetingElement);
+});
+
+export {introElement};

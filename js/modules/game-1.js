@@ -1,6 +1,8 @@
 // Game-1.js
+import {changeScreen, getElementFromTemplate} from '../util.js';
+//import {gameSecondElement} from './game-2.js';
 
-const gameFirstTemplate = () =>
+const gameFirstTemplate =
 `<header class="header">
   <div class="header__back">
   <button class="back">
@@ -67,5 +69,13 @@ const gameFirstTemplate = () =>
   </div>
   </footer>`;
 
-const gameFirstElement = getElementFromTemplate(gameFirstTemplate());
-export default gameFirstElement;
+const gameFirstElement = getElementFromTemplate(gameFirstTemplate);
+
+// const rulesButton = greetingElement.querySelector(`.rules__button`);
+//
+// rulesButton.addEventListener(`click`, () => {
+//   changeScreen(gameSecondElement);
+// });
+
+export {gameFirstElement};
+

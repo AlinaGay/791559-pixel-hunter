@@ -1,6 +1,8 @@
 // Stats.js
+import {changeScreen, getElementFromTemplate} from '../util.js';
+import {} from './rules.js';
 
-const statsTemplate = () =>
+const statsTemplate =
   `<header class="header">
     <div class="header__back">
       <button class="back">
