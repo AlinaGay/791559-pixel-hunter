@@ -1,6 +1,8 @@
 // Game-1.js
+
 import {changeScreen, getElementFromTemplate} from '../util.js';
-//import {gameSecondElement} from './game-2.js';
+import {gameSecondElement} from './game-2.js';
+import {greetingElement} from './greeting.js';
 
 const gameFirstTemplate =
 `<header class="header">
@@ -71,11 +73,23 @@ const gameFirstTemplate =
 
 const gameFirstElement = getElementFromTemplate(gameFirstTemplate);
 
-// const rulesButton = greetingElement.querySelector(`.rules__button`);
-//
-// rulesButton.addEventListener(`click`, () => {
-//   changeScreen(gameSecondElement);
-// });
+const question1Element = gameFirstElement.querySelectorAll('input[name="question1"]');
+const question2Element = gameFirstElement.querySelectorAll('input[name="question2"]');
+const gameOptionElement = gameFirstElement.querySelectorAll('div.game__option');
+
+
+gameOptionElement[1].addEventListener('change', () => {
+  if ((question1Element[0].checked || question1Element[1].checked) &&
+    (question2Element[0].checked || question2Element[1].checked)){
+    changeScreen(gameSecondElement);
+  }
+});
+
+const buttonBack = gameFirstElement.querySelector("button.back");
+buttonBack.addEventListener('click', () => {
+  changeScreen(greetingElement);
+});
 
 export {gameFirstElement};
+
 
