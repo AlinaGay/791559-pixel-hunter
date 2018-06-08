@@ -40,10 +40,15 @@ const rulesTemplate =
 
 const rulesElement = getElementFromTemplate(rulesTemplate);
 
-const rulesButton = rulesElement.querySelector(`.rules__button`);
+const form = rulesElement.querySelector(`.rules__form`);
+const input = rulesElement.querySelector(`.rules__input`);
+const button = rulesElement.querySelector(`.rules__button`);
 
-rulesButton.addEventListener(`click`, () => {
+form.addEventListener(`submit`, (evt) => {
+  evt.preventDefault();
   changeScreen(gameFirstElement);
 });
+
+input.addEventListener(`keyup`, (evt) => (button.disabled = evt.target.value === ``));
 
 export {rulesElement};
