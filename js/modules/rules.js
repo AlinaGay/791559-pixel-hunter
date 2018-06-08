@@ -1,9 +1,9 @@
-// Rules.js
 import {changeScreen, getElementFromTemplate} from '../util.js';
 import {gameFirstElement} from './game-1.js';
+import {greetingElement} from './greeting';
 
 const rulesTemplate =
-  `<header class="header">
+`<header class="header">
     <div class="header__back">
       <button class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -40,15 +40,23 @@ const rulesTemplate =
 
 const rulesElement = getElementFromTemplate(rulesTemplate);
 
-const form = rulesElement.querySelector(`.rules__form`);
-const input = rulesElement.querySelector(`.rules__input`);
-const button = rulesElement.querySelector(`.rules__button`);
+const rulesButton = rulesElement.querySelector('button.rules__button');
+const rulesInput = rulesElement.querySelector('input.rules__input');
+const buttonEnabled = () => {
+  if (rulesInput.value !== '' && rulesInput.value !== null) {
+    rulesButton.disabled = false;
+  }
+};
 
-form.addEventListener(`submit`, (evt) => {
-  evt.preventDefault();
+rulesInput.addEventListener("change", buttonEnabled);
+rulesButton.addEventListener('click', () => {
   changeScreen(gameFirstElement);
 });
 
-input.addEventListener(`keyup`, (evt) => (button.disabled = evt.target.value === ``));
+const buttonBack = rulesElement.querySelector("button.back");
+buttonBack.addEventListener('click', () => {
+  changeScreen(greetingElement);
+});
 
 export {rulesElement};
+
