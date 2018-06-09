@@ -5,7 +5,7 @@ import {gameSecondElement} from './game-2.js';
 import {greetingElement} from './greeting.js';
 
 const gameFirstTemplate =
-`<header class="header">
+  `<header class="header">
   <div class="header__back">
   <button class="back">
   <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -73,23 +73,24 @@ const gameFirstTemplate =
 
 const gameFirstElement = getElementFromTemplate(gameFirstTemplate);
 
-const question1Element = gameFirstElement.querySelectorAll('input[name="question1"]');
-const question2Element = gameFirstElement.querySelectorAll('input[name="question2"]');
-const gameOptionElement = gameFirstElement.querySelectorAll('div.game__option');
+const question1Element = gameFirstElement.querySelectorAll(`input[name="question1"]`);
+const question2Element = gameFirstElement.querySelectorAll(`input[name="question2"]`);
+const gameOptionElement = gameFirstElement.querySelectorAll(`div.game__option`);
 
 
-gameOptionElement[1].addEventListener('change', () => {
+gameOptionElement[1].addEventListener(`change`, () => {
   if ((question1Element[0].checked || question1Element[1].checked) &&
-    (question2Element[0].checked || question2Element[1].checked)){
+    (question2Element[0].checked || question2Element[1].checked)) {
     changeScreen(gameSecondElement);
   }
 });
 
-const buttonBack = gameFirstElement.querySelector("button.back");
-buttonBack.addEventListener('click', () => {
+const buttonBack = gameFirstElement.querySelector(`button.back`);
+buttonBack.addEventListener(`click`, () => {
   changeScreen(greetingElement);
 });
 
 export {gameFirstElement};
+
 
 
