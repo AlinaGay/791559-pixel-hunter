@@ -1,7 +1,10 @@
 // Game-2.js
+import {changeScreen, getElementFromTemplate} from '../util.js';
+import {gameThirdElement} from './game-3.js';
+import {greetingElement} from './greeting.js';
 
-const gameSecondTemplate = () =>
-`<header class="header">
+const gameSecondTemplate =
+  `<header class="header">
     <div class="header__back">
       <button class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -56,5 +59,20 @@ const gameSecondTemplate = () =>
     </div>
   </footer>`;
 
-const gameSecondElement = getElementFromTemplate(gameSecondTemplatee());
-export default gameSecondElement;
+const gameSecondElement = getElementFromTemplate(gameSecondTemplate);
+const gameOptionForm = gameSecondElement.querySelector(`div.game__option`);
+const question1Element = gameSecondElement.querySelectorAll(`input[name="question1"]`);
+
+gameOptionForm.addEventListener(`change`, () => {
+  if (question1Element[0].checked || question1Element[1].checked) {
+    changeScreen(gameThirdElement);
+  }
+});
+
+const buttonBack = gameSecondElement.querySelector(`button.back`);
+buttonBack.addEventListener(`click`, () => {
+  changeScreen(greetingElement);
+});
+
+export {gameSecondElement};
+
