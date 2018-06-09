@@ -40,23 +40,24 @@ const rulesTemplate =
 
 const rulesElement = getElementFromTemplate(rulesTemplate);
 
-const rulesButton = rulesElement.querySelector('button.rules__button');
-const rulesInput = rulesElement.querySelector('input.rules__input');
+const rulesButton = rulesElement.querySelector(`button.rules__button`);
+const rulesInput = rulesElement.querySelector(`input.rules__input`);
 const buttonEnabled = () => {
-  if (rulesInput.value !== '' && rulesInput.value !== null) {
+  if (rulesInput.value !== `` && rulesInput.value !== null) {
     rulesButton.disabled = false;
   }
 };
 
-rulesInput.addEventListener("change", buttonEnabled);
-rulesButton.addEventListener('click', () => {
+rulesInput.addEventListener(`change`, buttonEnabled);
+rulesButton.addEventListener(`click`, () => {
   changeScreen(gameFirstElement);
 });
 
-const buttonBack = rulesElement.querySelector("button.back");
-buttonBack.addEventListener('click', () => {
+const buttonBack = rulesElement.querySelector(`button.back`);
+buttonBack.addEventListener(`click`, () => {
   changeScreen(greetingElement);
 });
 
 export {rulesElement};
+
 
