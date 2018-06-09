@@ -5,7 +5,7 @@ import {gameSecondElement} from './game-2.js';
 import {greetingElement} from './greeting.js';
 
 const gameFirstTemplate =
-  `<header class="header">
+`<header class="header">
   <div class="header__back">
   <button class="back">
   <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -14,9 +14,12 @@ const gameFirstTemplate =
   </div>
   <h1 class="game__timer">NN</h1>
   <div class="game__lives">
-  <img src="img/heart__empty.svg" class="game__heart" alt="Life" width="32" height="32">
-  <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
-  <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
+<img src="img/heart__empty.svg" class="game__heart"
+alt="Life" width="32" height="32">
+  <img src="img/heart__full.svg" class="game__heart"
+   alt="Life" width="32" height="32">
+  <img src="img/heart__full.svg" class="game__heart"
+   alt="Life" width="32" height="32">
   </div>
   </header>
   <div class="game">
@@ -73,8 +76,10 @@ const gameFirstTemplate =
 
 const gameFirstElement = getElementFromTemplate(gameFirstTemplate);
 
-const question1Element = gameFirstElement.querySelectorAll(`input[name="question1"]`);
-const question2Element = gameFirstElement.querySelectorAll(`input[name="question2"]`);
+const question1Element =
+  gameFirstElement.querySelectorAll(`input[name="question1"]`);
+const question2Element =
+  gameFirstElement.querySelectorAll(`input[name="question2"]`);
 const gameOptionElement = gameFirstElement.querySelectorAll(`div.game__option`);
 
 
@@ -91,6 +96,4 @@ buttonBack.addEventListener(`click`, () => {
 });
 
 export {gameFirstElement};
-
-
 

@@ -75,4 +75,3 @@ buttonBack.addEventListener(`click`, () => {
 });
 
 export {gameSecondElement};
-

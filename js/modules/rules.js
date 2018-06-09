@@ -1,9 +1,11 @@
+// Rules.js
+
 import {changeScreen, getElementFromTemplate} from '../util.js';
 import {gameFirstElement} from './game-1.js';
 import {greetingElement} from './greeting';
 
 const rulesTemplate =
-`<header class="header">
+  `<header class="header">
     <div class="header__back">
       <button class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -48,7 +50,7 @@ const buttonEnabled = () => {
   }
 };
 
-rulesInput.addEventListener(`change`, buttonEnabled);
+rulesInput.addEventListener(`input`, buttonEnabled);
 rulesButton.addEventListener(`click`, () => {
   changeScreen(gameFirstElement);
 });
@@ -59,5 +61,3 @@ buttonBack.addEventListener(`click`, () => {
 });
 
 export {rulesElement};
-
-

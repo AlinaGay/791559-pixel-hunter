@@ -1,11 +1,11 @@
 // Util.js
 
- const getElementFromTemplate = (template) => {
-   const container = document.createElement(`div`);
-   container.innerHTML = template;
+const getElementFromTemplate = (template) => {
+  const container = document.createElement(`div`);
+  container.innerHTML = template;
 
- return container;
- };
+  return container;
+};
 
 const changeScreen = (element) => {
   const mainElement = document.querySelector(`main.central`);
