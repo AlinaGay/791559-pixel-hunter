@@ -1,6 +1,6 @@
 // Stats.js
 import {changeScreen, getElementFromTemplate} from '../util.js';
-import {} from './rules.js';
+import {greetingElement} from './greeting.js';
 
 const statsTemplate =
   `<header class="header">
@@ -122,5 +122,11 @@ const statsTemplate =
     </div>
   </footer>`;
 
-const statsElement = getElementFromTemplate(statsTemplatee());
-export default statsElement;
+const statsElement = getElementFromTemplate(statsTemplate);
+
+const buttonBack = statsElement.querySelector(`button.back`);
+buttonBack.addEventListener(`click`, () => {
+  changeScreen(greetingElement);
+});
+
+export {statsElement};
