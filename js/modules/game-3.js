@@ -1,6 +1,9 @@
 // Game-3.js
+import {changeScreen, getElementFromTemplate} from '../util.js';
+import {statsElement} from './stats.js';
+import {greetingElement} from './greeting.js';
 
-const gameThirdTemplate = () =>
+const gameThirdTemplate =
 `<header class="header">
     <div class="header__back">
       <button class="back">
@@ -54,5 +57,23 @@ const gameThirdTemplate = () =>
     </div>
   </footer>`;
 
-const gameThirdElement = getElementFromTemplate(gameThirdTemplatee());
-export default gameThirdElement;
+const gameThirdElement = getElementFromTemplate(gameThirdTemplate);
+
+const divGameOptionList = gameThirdElement.querySelectorAll(`div.game__option`);
+
+divGameOptionList[0].addEventListener(`click`, () => {
+  changeScreen(statsElement);
+});
+divGameOptionList[1].addEventListener(`click`, () => {
+  changeScreen(statsElement);
+});
+divGameOptionList[2].addEventListener(`click`, () => {
+  changeScreen(statsElement);
+});
+
+const buttonBack = gameThirdElement.querySelector(`button.back`);
+buttonBack.addEventListener(`click`, () => {
+  changeScreen(greetingElement);
+});
+
+export {gameThirdElement};
