@@ -1,3 +1,14 @@
+const answersAreLessThan10 =
+    [
+      {isRight: true, timeInSeconds: 20},
+      {isRight: true, timeInSeconds: 40},
+      {isRight: true, timeInSeconds: 30},
+      {isRight: true, timeInSeconds: 10},
+      {isRight: true, timeInSeconds: 20},
+      {isRight: true, timeInSeconds: 20},
+      {isRight: true, timeInSeconds: 30}
+    ];
+
 const answersAreNotAllTrue =
     [{isRight: true, timeInSeconds: 20},
       {isRight: false, timeInSeconds: 40},
@@ -8,17 +19,6 @@ const answersAreNotAllTrue =
       {isRight: false, timeInSeconds: 40},
       {isRight: true, timeInSeconds: 10},
       {isRight: false, timeInSeconds: 20},
-      {isRight: true, timeInSeconds: 30}
-    ];
-
-const answersAreLessThan10 =
-    [
-      {isRight: true, timeInSeconds: 20},
-      {isRight: true, timeInSeconds: 40},
-      {isRight: true, timeInSeconds: 30},
-      {isRight: true, timeInSeconds: 10},
-      {isRight: true, timeInSeconds: 20},
-      {isRight: true, timeInSeconds: 20},
       {isRight: true, timeInSeconds: 30}
     ];
 
@@ -48,7 +48,7 @@ const answersWithSlowAndFast =
       {isRight: true, timeInSeconds: 20}
     ];
 
-const answersWithoutSlowAndWithFast =
+const answersWithFastAndremainingLives2 =
     [{isRight: true, timeInSeconds: 20},
       {isRight: true, timeInSeconds: 5},
       {isRight: true, timeInSeconds: 5},
@@ -62,7 +62,7 @@ const answersWithoutSlowAndWithFast =
     ];
 
 
-const answersWithSlowAndWithoutFast =
+const answersWithSlowAndremainingLives0 =
     [{isRight: true, timeInSeconds: 20},
       {isRight: true, timeInSeconds: 20},
       {isRight: true, timeInSeconds: 20},
@@ -79,5 +79,5 @@ export {answersAreNotAllTrue};
 export {answersAreLessThan10};
 export {answersWithoutSlowAndFast};
 export {answersWithSlowAndFast};
-export {answersWithoutSlowAndWithFast};
-export {answersWithSlowAndWithoutFast};
+export {answersWithFastAndremainingLives2};
+export {answersWithSlowAndremainingLives0};
