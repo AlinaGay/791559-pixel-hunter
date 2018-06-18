@@ -1,5 +1,6 @@
 const scoreInTheEnd = (answers, remainingLives) => {
   let resultScore = 1000;
+  const SCORES = 100;
   const FAST_LIMIT = 15;
   const SLOW_LIMIT = 25;
   let PART_SCORE = 50;
@@ -11,6 +12,7 @@ const scoreInTheEnd = (answers, remainingLives) => {
   for (let j = 0; j < answers.length; j++) {
     if (answers[j].isRight === false) {
       i++;
+      resultScore -= SCORES;
     }
     if (i === 4) {
       return -1;

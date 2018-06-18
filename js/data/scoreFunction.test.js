@@ -1,6 +1,6 @@
 import {assert} from 'chai';
 import {answersAreNotAllTrue, answersAreLessThan10, answersWithoutSlowAndFast,
-  answersWithSlowAndFast, answersWithFastAndremainingLives2, answersWithSlowAndremainingLives0} from './answers.data.js';
+  answersWithSlowAndFast, answersWithFastAndremainingLives2, answersWithSlowAndremainingLives0, answersWithWrong} from './answers.data.js';
 import {scoreInTheEnd} from './scoreFunction.js';
 
 describe(`#scoreInTheEnd()`, () => {
@@ -66,5 +66,17 @@ describe(`#scoreInTheEnd()`, () => {
     const actualFastSlowMiddleValue = scoreInTheEnd(answersWithSlowAndremainingLives0, remainingLives);
 
     assert.equal(expectedFastSlowMiddleValue, actualFastSlowMiddleValue);
+  });
+});
+
+describe(`#scoreInTheEnd()`, () => {
+  it(`should not return 1000 when there's just one wrong answer`, () => {
+    const expectedWithWrong = 1000;
+    const remainingLives = 2;
+
+    const actualWithWrong = scoreInTheEnd(answersWithWrong, remainingLives);
+
+
+    assert.equal(expectedWithWrong, actualWithWrong);
   });
 });

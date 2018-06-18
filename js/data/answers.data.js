@@ -75,9 +75,25 @@ const answersWithSlowAndremainingLives0 =
       {isRight: true, timeInSeconds: 20}
     ];
 
+const answersWithWrong = [
+  {isRight: true, timeInSeconds: 15},
+  {isRight: true, timeInSeconds: 15},
+  {isRight: true, timeInSeconds: 15},
+  {isRight: true, timeInSeconds: 15},
+  {isRight: false, timeInSeconds: 15},
+
+  {isRight: true, timeInSeconds: 15},
+  {isRight: true, timeInSeconds: 15},
+  {isRight: true, timeInSeconds: 15},
+  {isRight: true, timeInSeconds: 15},
+  {isRight: true, timeInSeconds: 15}
+];
+
 export {answersAreNotAllTrue};
 export {answersAreLessThan10};
 export {answersWithoutSlowAndFast};
 export {answersWithSlowAndFast};
 export {answersWithFastAndremainingLives2};
 export {answersWithSlowAndremainingLives0};
+export {answersWithWrong};
+

@@ -1,5 +1,6 @@
 import {assert} from 'chai';
-import {getTimer} from '../timer.js';
+import {END_TIME, getTimer} from '../timer.js';
+
 
 describe(`#getTimer()`, ()=>{
   it(`should return timer object with 5 seconds remain time and left times 5, 4, 3, 2, 1, 0 and 'time is end'`, ()=>{
@@ -32,14 +33,9 @@ describe(`#getTimer()`, ()=>{
 
     assert.equal(expectedTimeInTimer4, actualTimerInTimer4);
 
-    const expectedTimeInTimer5 = 0;
+    const expectedTimeInTimer5 = END_TIME;
     const actualTimerInTimer5 = actualTimer.tick();
 
     assert.equal(expectedTimeInTimer5, actualTimerInTimer5);
-
-    const expectedTimeInTimer6 = `time is end`;
-    const actualTimerInTimer6 = actualTimer.tick();
-
-    assert.equal(expectedTimeInTimer6, actualTimerInTimer6);
   });
 });
